@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Navbars from './components/layout/Navbar';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import ListTraining from './components/menu/listTraining';
+import Profil from './components/menu/profil';
+import RequestTraining from './components/menu/requestTraining';
+import LogIn from './components/auth/LogIn';
+import SignUp from './components/auth/SignUp';
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  render(){
+    return (
+      <Router>
+        <div className="App">
+        <Navbars />
+        <Switch>
+          <Route exact path='/' component={ListTraining} />
+          <Route path='/RequestTraining' component={RequestTraining} />
+          <Route path='/Profile' component={Profil} />
+          <Route path='/LogIn' component={LogIn} />
+          <Route path='/SignUp' component={SignUp} />
+        </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

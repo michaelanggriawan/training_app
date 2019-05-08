@@ -1,14 +1,54 @@
+html{
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  background-size: 100%;
+  background-position: bottom;
+  background-color: #95e8f3;
+  min-height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+form{
+  padding: 20px;
+  margin-top: 60px;
+}
+
+@media
+only screen and (max-width: 1500px) {
+  table, thead, tbody, th, td, tr {
+    margin-top: 30px;
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr { border: 1px solid #ccc; }
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 200px;
+    margin-left: 150px;
+  }
+  td:before {
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    width: 200px;
+    padding-right: 40px;
+    white-space: nowrap;
+    margin-left: -150px;
+  }
+  td:nth-of-type(1):before { content: "Pengelola Training"; }
+  td:nth-of-type(2):before { content: "Topik"; }
+  td:nth-of-type(3):before { content: "Lokasi"; }
+  td:nth-of-type(4):before { content: "Tanggal Mulai"; }
+  td:nth-of-type(5):before { content: "Tanggal Berakhir"; }
+  td:nth-of-type(6):before { content: "Harga";}
 }
